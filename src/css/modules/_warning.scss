@@ -1,0 +1,23 @@
+
+
+.warning
+{
+        position: absolute;
+        width: calc(100% - 150px);
+        left: 150px;
+        height: 100px;
+        background: $warning-color;
+        color: $text-color;
+        display: grid;
+        grid-template-columns: auto 100px;
+
+        a
+        {
+                font-size: 75px;
+        }
+
+        i
+        {
+                font-size: 75px;
+        }
+}

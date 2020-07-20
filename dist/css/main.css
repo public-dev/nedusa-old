@@ -1,0 +1,302 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fefefe;
+}
+
+a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+input {
+  color: #fefefe;
+}
+
+header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  color: #fefefe;
+  z-index: 10000;
+}
+
+#nice-menu {
+  z-index: 10001;
+  transition: all 200ms;
+  display: grid;
+  grid-template-rows: 50px auto;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #32302f;
+  top: 100vh;
+}
+#nice-menu:target {
+  top: 0;
+}
+#nice-menu #nm-header {
+  background: #21201d;
+  font-size: 45px;
+}
+#nice-menu #nm-header .content {
+  display: grid;
+  grid-template-columns: auto 50px;
+}
+#nice-menu #nm-content {
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+}
+#nice-menu #nm-content ul li {
+  list-style: none;
+  font-size: 20px;
+}
+
+#header-side {
+  position: absolute;
+  width: 150px;
+  height: calc(100vh - 100px);
+  bottom: 100px;
+  background: #21201d;
+}
+#header-side ul {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#header-side ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+#header-side ul li a {
+  text-overflow: ellipsis;
+  width: 90%;
+  margin-left: 5%;
+  display: block;
+  overflow: hidden;
+}
+#header-side ul li .bold-text {
+  text-align: center;
+}
+
+#header-foot {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 100px;
+  background: #21201d;
+}
+#header-foot .content {
+  display: grid;
+  grid-template-columns: 150px auto auto auto auto auto 100px;
+}
+#header-foot .content .rsl {
+  margin: 5px;
+  background: #32302f;
+}
+#header-foot .content .rsl:hover {
+  background: #505060;
+  cursor: pointer;
+}
+#header-foot .content .rsl i {
+  position: relative;
+  height: 80%;
+  top: 10%;
+  font-size: 80px;
+}
+
+@media screen and (max-width: 764px) {
+  #header-side {
+    display: none;
+  }
+
+  #header-foot {
+    height: 70px;
+  }
+
+  #header-foot .content .rsl i {
+    font-size: 20px;
+  }
+
+  #header-foot .content {
+    grid-template-columns: auto auto auto auto auto 70px;
+  }
+  #header-foot .content #header-foot-logo {
+    display: none;
+  }
+}
+main {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 100px);
+  color: #fefefe;
+  background: #32302f;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.warning ~ main {
+  height: calc(100% - 200px);
+  top: 100px;
+}
+
+/* #header-side ~ */
+main {
+  left: 150px;
+  width: calc(100% - 150px);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.rsl {
+  display: block;
+  background: #505060;
+  border-radius: 2rem;
+}
+.rsl i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.dsc-txt {
+  display: none;
+  position: absolute;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  padding: 5%;
+  font-size: 15px;
+  text-align: center;
+  background: #21201d;
+  color: #fefefe;
+  border-radius: 2rem;
+  bottom: 110%;
+}
+
+.header-text {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.title {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form.sign-form {
+  width: 100%;
+  background: #32302f;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+.form.sign-form a:not(.title) {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+  transition: 0.2s linear;
+}
+.form.sign-form .title {
+  margin: 48px 0;
+}
+.form.sign-form .form-input {
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+}
+.form.sign-form .form-input input {
+  width: 100%;
+  height: 70px;
+  border: none;
+  background: #21201d;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 14px 10px 0 10px;
+  margin: 0;
+}
+.form.sign-form .form-placeholder {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+  line-height: 70px;
+  top: 0;
+  left: 20px;
+  color: #aeaeae;
+  user-select: none;
+  pointer-events: none;
+}
+.form.sign-form .form-show-password {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  line-height: 70px;
+  color: #aeaeae;
+  font-size: 20px;
+  cursor: pointer;
+}
+.form.sign-form .form-input input:focus ~ .form-placeholder,
+.form.sign-form .form-input input:valid ~ .form-placeholder {
+  left: 10px;
+  top: -16px;
+}
+.form.sign-form .next-button {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: #aeaeae;
+  font-size: 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.form.sign-form .next-button:hover {
+  opacity: 0.85;
+}
+.form.sign-form a:hover {
+  color: #eeeeee;
+}
+
+.warning {
+  position: absolute;
+  width: calc(100% - 150px);
+  left: 150px;
+  height: 100px;
+  background: #ddaa00;
+  color: #fefefe;
+  display: grid;
+  grid-template-columns: auto 100px;
+}
+.warning a {
+  font-size: 75px;
+}
+.warning i {
+  font-size: 75px;
+}
+
+/*# sourceMappingURL=main.css.map */

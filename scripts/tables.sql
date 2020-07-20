@@ -1,0 +1,15 @@
+CREATE TABLE users(
+    uid INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    passwd TEXT NOT NULL,
+    uname VARCHAR(128) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+    ustatus VARCHAR(256) NOT NULL DEFAULT 'Hello!',
+    signedup datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    isAdmin tinyint(1) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE sessions(
+    id TEXT PRIMARY KEY NOT NULL,
+    user INT(11) NOT NULL,
+    created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

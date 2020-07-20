@@ -1,0 +1,25 @@
+
+
+
+main
+{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 100px);
+    color: $text-color;
+    background: $background-color;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.warning ~ main
+{
+    height: calc(100% - 200px);
+    top: 100px;
+}
+
+/* #header-side ~ */main
+{
+    left: 150px;
+    width: calc(100% - 150px);
+}

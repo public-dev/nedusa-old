@@ -1,0 +1,138 @@
+Never use more than 3 levels of indentation.
+Use 8-char indentation.
+
+Do not indent at the base of functions.
+
+The <?php ?> tag is not a reason to indent.
+
+Braces
+
+Put the opening brace last on the line and the closing brace first
+
+if (?) {
+
+}
+
+Unless it's a function:
+
+function gday()
+{
+
+}
+
+
+
+(for non-function blocks) the closing brace is on a line of its own, expect when it is followed by a continuation of the same statement.
+
+if (?) {
+
+} else {
+
+}
+
+
+Do not use braces where a single statement will do
+
+if (?)
+    action();
+
+and
+
+if (?)
+    action();
+else
+    other_action();
+
+
+This does not apply if only one branch of a conditional statement is a single statement; in the latter case use braces in both branches:
+
+if (?) {
+    action();
+    action2();
+} else {
+    some_action();
+}
+
+Also, use braces when a loop contains more than a single simple statement:
+while (?)
+{
+    if(?)
+        say_hi();
+}
+
+Place spaces after non-function blocks,
+
+if (?) {
+
+}
+
+but not function blocks.
+
+function hi()
+{
+
+}
+
+
+Use one space around (on each side of) binary and ternary operators, but not unary operators.
+
+No spaces around ->
+
+Spaces around . if used to connect parts of a string.
+
+
+
+-Naming-
+
+Local variable names and names of functions within classes should be short and straight to the point.
+Instead of "temporary_var", use "tmp".
+Instead of "count_users", use "cntuser" or "cnt_user".
+
+Global variable names and names of global functions should be descriptive.
+Instead of "cnt_user", use "count_users".
+Instead of 
+
+
+Instead of using master and slave, use "main" and "secondary".
+
+-Functions-
+
+If you can, keep your functions short.
+You can split them into multiple functions.
+
+Please don't exceed 5 local variables.
+
+
+-Comments-
+
+Comments are good, but there is also a danger of over-commenting. NEVER try to explain HOW your code works in a comment: it's much better to write the code so
+that the working is obvious, and it's a waste of time to explain badly written code.
+
+Generally, you want your comments to tell WHAT your code does, not HOW. Also, try avoid putting comments inside a function body:
+if the function is so complex that you need to separately comment parts of it, you should probably re-read "-Functions-".
+You can make small comments to note or warn about something particularly clever (or ugly), but try to avoid excess.
+Instead, put the comments at the head of the function, telling people what is does, and possibly WHY it does it.
+
+
+Style:
+
+
+function print_users()
+{
+    /*
+     * This function fetches all users
+     * and prints them
+     */
+
+}
+
+One empty line at the top
+
+
+-Function return values and names-
+
+Instead of making functions return nothing, return integers.
+
+0: success
+1/non-0: failure
+
